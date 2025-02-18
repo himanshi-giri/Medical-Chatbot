@@ -69,7 +69,7 @@ function App() {
   
     const formattedHistory = chatHistory.map(msg => `${msg.sender}: ${msg.text}`).join('\n');
     const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
-    const GEMINI_API = import.meta.env.VITE_GEMINI_API_KEY;
+   // const GEMINI_API = import.meta.env.VITE_GEMINI_API_KEY;
   
     const prompt = `
     Your name is DocBuddy, an empathetic, helpful, and respectful and highly knowledgeable senior general practitioner doctor. 
@@ -221,7 +221,8 @@ return (
         ))}
       </div>
 
-      <textarea
+     <div className="chat-input-wrapper">
+     <textarea
         className="chat-input"
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
@@ -244,6 +245,7 @@ return (
            <FaMicrophone />
         </button>
      
+     </div>
         
     </div>
   </div>
